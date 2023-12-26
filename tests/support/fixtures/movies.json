@@ -1,0 +1,82 @@
+{
+  "create": {
+    "title": "Guerra Mundial Z",
+    "overview": "Um ex-investigador da ONU é chamado para investigar a origem de uma pandemia global que transforma as pessoas em zumbis, ameaçando dizimar a população mundial.",
+    "company": "Paramount Pictures",
+    "release_year": 2013,
+    "featured": false,
+    "cover": "/caminho/para/guerra_mundial_z.png"
+  },
+  "resident_evil_o_hospede_maldito": {
+    "title": "Resident Evil: O Hospede Maldito",
+    "overview": "Um vírus experimental escapa de um laboratório subterrâneo, transformando as pessoas em mortos-vivos. Uma equipe militar é enviada para conter a ameaça.",
+    "company": "Sony Pictures",
+    "release_year": 2002,
+    "featured": true,
+    "cover": "/caminho/para/resident_evil.png"
+  },
+  "exterminio": {
+    "title": "Extermínio",
+    "overview": "Um vírus devastador transforma a população em zumbis rápidos e ferozes. Um grupo de sobreviventes tenta encontrar refúgio em meio ao caos.",
+    "company": "Universal Pictures",
+    "release_year": 2002,
+    "featured": true,
+    "cover": "/caminho/para/extermínio.png"
+  },
+  "eu_sou_a_lenda": {
+    "title": "Eu Sou a Lenda",
+    "overview": "Após um surto de um vírus, um cientista sobrevive como o último humano não infectado em Nova York, enfrentando mutantes noturnos.",
+    "company": "Warner Bros. Pictures",
+    "release_year": 2007,
+    "featured": true,
+    "cover": "/caminho/para/eu_sou_a_lenda.png"
+  },
+  "invasao_zumbi": {
+    "title": "Invasão Zumbi",
+    "overview": "Durante uma viagem de trem, um surto zumbi se espalha, forçando os passageiros a lutarem pela sobrevivência em um mundo infestado.",
+    "company": "Next Entertainment World",
+    "release_year": 2016,
+    "featured": true,
+    "cover": "/caminho/para/invasao_zumbi.png"
+  },
+  "madrugada_dos_mortos": {
+    "title": "Madrugada dos Mortos",
+    "overview": "Um grupo de pessoas fica preso em um shopping enquanto uma horda de zumbis toma conta do mundo exterior. Eles lutam para sobreviver.",
+    "company": "Universal Pictures",
+    "release_year": 2004,
+    "featured": true,
+    "cover": "/caminho/para/madrugada_dos_mortos.png"
+  },
+  "zumbilandia": {
+    "title": "Zumbilândia",
+    "overview": "Um grupo de sobreviventes improváveis se une para enfrentar zumbis e encontrar um lugar seguro para viver em um mundo pós-apocalíptico.",
+    "company": "Sony Pictures",
+    "release_year": 2009,
+    "featured": true,
+    "cover": "/caminho/para/zumbilandia.png"
+  },
+  "o_hospedeiro": {
+    "title": "O Hospedeiro",
+    "overview": "Um monstro mutante emerge do rio Han, ameaçando a cidade de Seul. A luta contra o monstro se complica quando ele espalha um vírus zumbi.",
+    "company": "Showbox",
+    "release_year": 2006,
+    "featured": true,
+    "cover": "/caminho/para/o_hospedeiro.png"
+  },
+  "a_noite_dos_mortos_vivos": {
+    "title": "A Noite dos Mortos-Vivos",
+    "overview": "Os mortos se levantam para devorar os vivos, enquanto um grupo de pessoas tenta sobreviver trancado em uma casa isolada.",
+    "company": "Continental Distributing",
+    "release_year": 1968,
+    "featured": true,
+    "cover": "/caminho/para/a_noite_dos_mortos_vivos.png"
+  },
+  "rec": {
+    "title": "Rec",
+    "overview": "Uma repórter e seu cinegrafista ficam presos em um prédio com moradores infectados por uma misteriosa doença que os transforma em zumbis.",
+    "company": "Filmax",
+    "release_year": 2007,
+    "featured": true,
+    "cover": "/caminho/para/rec.png"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "name": "zombieplus",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "@faker-js/faker": "^8.3.1",
+    "@playwright/test": "^1.40.1",
+    "@types/node": "^20.10.3",
+    "pg": "^8.11.3"
+  },
+  "prettier": {
+    "printWidth": 180,
+    "semi": false,
+    "singleQuote": true,
+    "trailingComma": "none"
+  },
+  "scripts": {
+    "run:ui": "npx playwright test --ui",
+    "run:headless": "npx playwright test",
+    "run:openBrowser": "npx playwright test --headed"
+  }
+}
