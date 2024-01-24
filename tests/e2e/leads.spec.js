@@ -1,5 +1,6 @@
 const { test, expect } = require('../support')
 const { faker } = require('@faker-js/faker')
+const { executeSQL } = require('../support/database')
 
 // test.beforeAll(async () => {
 //   leadName = faker.person.fullName()
@@ -36,40 +37,44 @@ const { faker } = require('@faker-js/faker')
 //   await expect(page.locator('.toast')).toBeHidden({ timeout: 5000 })
 // })
 
+test.beforeAll(async () => {
+  await executeSQL(`DELETE from leads`)
+})
+
 test('Deve cadastrar um lead na fila de espera', async ({ page }) => {
   const payload = {
     name: faker.person.fullName(),
-    email: faker.internet.email(),
-    message: 'Agradecemos por compartilhar seus dados conosco. Em breve, nossa equipe entrará em contato!'
+    email: 'user.test@qa.com.br',
+    message: 'Agradecemos por compartilhar seus dados conosco. Em breve, nossa equipe entrará em contato.'
   }
 
-  await page.landing.visit()
+  await page.leads.visit()
 
-  await page.landing.openLeadModal()
+  await page.leads.openLeadModal()
 
-  await page.landing.submitLeadForm(payload)
+  await page.leads.submitLeadForm(payload)
 
-  await page.toast.containText(payload.message)
+  await page.popup.haveText(payload.message)
 })
 
 test('Não deve cadastrar email duplicado', async ({ page, request }) => {
   const payload = {
     name: faker.person.fullName(),
     email: faker.internet.email(),
-    message: 'O endereço de e-mail fornecido já está registrado em nossa fila de espera.'
+    message: 'Verificamos que o endereço de e-mail fornecido já consta em nossa lista de espera. Isso significa que você está um passo mais perto de aproveitar nossos serviços.'
   }
 
   const newLead = await request.post('http://localhost:3333/leads', { data: { name: payload.name, email: payload.email } })
 
   expect(newLead.ok()).toBeTruthy()
 
-  await page.landing.visit()
+  await page.leads.visit()
 
-  await page.landing.openLeadModal()
+  await page.leads.openLeadModal()
 
-  await page.landing.submitLeadForm(payload)
+  await page.leads.submitLeadForm(payload)
 
-  await page.toast.containText(payload.message)
+  await page.popup.haveText(payload.message)
 })
 
 test('Não deve cadastrar com email incorreto', async ({ page }) => {
@@ -79,13 +84,13 @@ test('Não deve cadastrar com email incorreto', async ({ page }) => {
     target: 'Email incorreto'
   }
 
-  await page.landing.visit()
+  await page.leads.visit()
 
-  await page.landing.openLeadModal()
+  await page.leads.openLeadModal()
 
-  await page.landing.submitLeadForm(payload)
+  await page.leads.submitLeadForm(payload)
 
-  await page.landing.alertHaveText(payload.target)
+  await page.leads.alertHaveText(payload.target)
 })
 
 test('Não deve cadastrar quando nome não é informado', async ({ page }) => {
@@ -95,13 +100,13 @@ test('Não deve cadastrar quando nome não é informado', async ({ page }) => {
     target: 'Campo obrigatório'
   }
 
-  await page.landing.visit()
+  await page.leads.visit()
 
-  await page.landing.openLeadModal()
+  await page.leads.openLeadModal()
 
-  await page.landing.submitLeadForm(payload)
+  await page.leads.submitLeadForm(payload)
 
-  await page.landing.alertHaveText(payload.target)
+  await page.leads.alertHaveText(payload.target)
 })
 
 test('Não deve cadastrar quando o email não é informado', async ({ page }) => {
@@ -111,13 +116,13 @@ test('Não deve cadastrar quando o email não é informado', async ({ page }) =>
     target: 'Campo obrigatório'
   }
 
-  await page.landing.visit()
+  await page.leads.visit()
 
-  await page.landing.openLeadModal()
+  await page.leads.openLeadModal()
 
-  await page.landing.submitLeadForm(payload)
+  await page.leads.submitLeadForm(payload)
 
-  await page.landing.alertHaveText(payload.target)
+  await page.leads.alertHaveText(payload.target)
 })
 
 test('Não deve cadastrar quando nenhum campo é preenchido', async ({ page }) => {
@@ -127,11 +132,11 @@ test('Não deve cadastrar quando nenhum campo é preenchido', async ({ page }) =
     target: 'Campo obrigatório'
   }
 
-  await page.landing.visit()
+  await page.leads.visit()
 
-  await page.landing.openLeadModal()
+  await page.leads.openLeadModal()
 
-  await page.landing.submitLeadForm(payload)
+  await page.leads.submitLeadForm(payload)
 
-  await page.landing.alertHaveText([payload.target, payload.target])
+  await page.leads.alertHaveText([payload.target, payload.target])
 })

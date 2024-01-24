@@ -4,16 +4,16 @@
     "overview": "Um ex-investigador da ONU é chamado para investigar a origem de uma pandemia global que transforma as pessoas em zumbis, ameaçando dizimar a população mundial.",
     "company": "Paramount Pictures",
     "release_year": 2013,
-    "featured": false,
-    "cover": "/caminho/para/guerra_mundial_z.png"
+    "featured": true,
+    "cover": "covers/movies/wwz.png"
   },
-  "resident_evil_o_hospede_maldito": {
+  "duplicate": {
     "title": "Resident Evil: O Hospede Maldito",
     "overview": "Um vírus experimental escapa de um laboratório subterrâneo, transformando as pessoas em mortos-vivos. Uma equipe militar é enviada para conter a ameaça.",
     "company": "Sony Pictures",
     "release_year": 2002,
-    "featured": true,
-    "cover": "/caminho/para/resident_evil.png"
+    "featured": false,
+    "cover": "/covers/movies/resident-evil.jpg"
   },
   "exterminio": {
     "title": "Extermínio",
