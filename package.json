@@ -16,8 +16,8 @@
     "trailingComma": "none"
   },
   "scripts": {
-    "run:ui": "npx playwright test --ui",
-    "run:headless": "npx playwright test",
-    "run:openBrowser": "npx playwright test --headed"
+    "pw:ui": "npx playwright test --ui",
+    "pw:headless": "npx playwright test",
+    "pw:openBrowser": "npx playwright test --headed"
   }
 }

@@ -28,7 +28,13 @@ export class Api {
         ContentType: 'multipart/form-data',
         Accept: 'application/json, text/plain, */*'
       },
-      multipart: { title: movie.title, overview: movie.overview, company_id: companyId, release_year: movie.release_year, featured: movie.featured }
+      multipart: { 
+        title: movie.title, 
+        overview: movie.overview, 
+        company_id: companyId, 
+        release_year: movie.release_year, 
+        featured: movie.featured 
+      }
     })
 
     expect(response.ok()).toBeTruthy()
@@ -47,5 +53,27 @@ export class Api {
     expect(response.ok()).toBeTruthy()
     const body = JSON.parse(await response.text())
     return body.data[0].id
+  }
+
+  async postSerie(tvshow) {
+    const id = await this.getCompanyIdByName(tvshow.company)
+
+    const response = await this.request.post('http://localhost:3333/tvshows', {
+      headers: {
+        Authorization: this.token,
+        ContentType: 'multipart/form-data',
+        Accept: 'application/json, text/plain, */*'
+      },
+      multipart: {
+         title: tvshow.title, 
+         overview: tvshow.overview, 
+         company_id: id, 
+         release_year: tvshow.release_year, 
+         seasons: tvshow.season, 
+         featured: tvshow.featured 
+        }
+    })
+
+    expect(response.ok()).toBeTruthy()
   }
 }
