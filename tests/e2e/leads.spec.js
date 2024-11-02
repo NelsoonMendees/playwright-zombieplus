@@ -125,7 +125,7 @@ test('Não deve cadastrar quando o email não é informado', async ({ page }) =>
   await page.leads.alertHaveText(payload.target)
 })
 
-test('Não deve cadastrar quando nenhum campo é preenchido', async ({ page }) => {
+test('Não deve cadastrar um lead quando nenhum campo é preenchido', async ({ page }) => {
   const payload = {
     name: '',
     email: '',
